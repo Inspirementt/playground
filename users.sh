@@ -134,7 +134,7 @@ while IFS=',' read -r user || [[ -n "$user" ]]; do
         continue
     else
         # Generate a random password
-        password=$(openssl rand -base64 12)  # Generate a random password
+        password=$(openssl rand -base64 12 | head -c 12)  # Generate a random password
         arr_pass+=("$password")  # Add the password to the arr_pass array
     fi
 done < users.csv
