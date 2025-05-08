@@ -76,7 +76,7 @@ if [ -f username.password ]; then
         fi
     done < username.password
 fi
-debug-output
+# debug-output
 
 # initialize unknown_password variable
 unknown_password=0
@@ -109,7 +109,7 @@ while IFS=',' read -r user group || [[ -n "$user" ]]; do
       arr_groups+=("$group")  # Add group to the groups array
     fi
 done < users.csv
-debug-output
+# debug-output
 
 # setting "unknown" password for users that are new to the array but also already exist in the system
 for i in "${!arr_users[@]}"; do
@@ -138,7 +138,7 @@ while IFS=',' read -r user || [[ -n "$user" ]]; do
         arr_pass+=("$password")  # Add the password to the arr_pass array
     fi
 done < users.csv
-debug-output
+# debug-output
 
 echo "Adding users and groups (skipping existing accounts)..."
 # Add users and groups
@@ -162,7 +162,7 @@ for i in "${!arr_users[@]}"; do
     # add the user to the group
     usermod -aG "${arr_groups[$i]}" "${arr_users[$i]}"
 done
-debug-output
+# debug-output
 
 echo "Creating output file..."
 #echo all entries and their users and groups
