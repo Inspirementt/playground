@@ -1,0 +1,1142 @@
+  <!-- Big gaps appearing above and below my name/img tables. ChatGPT tells me: the extra spacing between your text and the 
+   tables is almost certainly being caused by line breaks (enters) between macros.  
+   
+   How to fix it:
+You can keep line breaks for readability, but just suppress them with - (minus signs) right after the macro tag names.
+
+I tried to fix this manually, but still ended up with gaps and dashes.
+
+This is likely due to:
+
+Multiple blank lines (enters) between SugarCube tags like <<if>>, <<set>>, and HTML.
+
+Line breaks being rendered in SugarCube output — especially when not wrapped in <<nobr>> or when placed between block-level HTML elements like <div> and <table>.
+    
+    Another possible fix:
+
+    If you need blank lines for readability in Twine, do it outside the live logic or wrap the logic in <<silently>>:
+
+    Also, In every table, you have:
+<tr><td><center></center></td></tr>
+This does nothing visually and adds spacing. You can safely delete these unless you’re using them as placeholders.
+
+BASICALLY... I still need some space for readability when working with the HTML file, but should only be like a regular <br><br> gap between the main text, the name tables
+and the end text links. Thank you!
+    -->
+
+
+
+
+
+
+
+<div id="clive" style="background-image: url('http://i.imgur.com/DFyE0Cw.png');"></div>
+
+<div id="rekindle"><<link "[img[http://i.imgur.com/wItJfIP.png]]">>
+  <<goto "Rekindled">>
+<</link>>
+</div>
+
+<div id="float"></div>
+
+<div id="nav" class="nav">
+  <a href="https://www.neopets.com/" target="_blank" rel="noopener noreferrer">Home</a>
+  <a href="https://www.neopets.com/winter/terrormountain.phtml" target="_blank" rel="noopener noreferrer">Terror Mtn</a>
+  <a href="https://www.neopets.com/reg/page4.phtml" target="_blank" rel="noopener noreferrer">Create</a>
+  <a href="https://www.neopets.com/pound/adopt.phtml" target="_blank" rel="noopener noreferrer">Adopt</a>
+  <a href="https://sunnyneo.com/" target="_blank" rel="noopener noreferrer">SunnyNeo</a>
+</div>
+
+<div id="container">
+  <div class="box">
+  
+  <center>
+<font id="pgtone">The Hut of the Hushed Scribe and Keeper of</font><br><font id="pgttwo">Dormant Names</font>
+
+<b>kyliesmiley16's list of available pet names</b><br><br></center>
+
+Without another word, Clive offers you one of the scrolls he's been bent over—several names illuminated upon it.  You gaze over the list with increased hope ...
+
+<<set $Winner = "none">>
+
+<<if $Nature > $Winter and $Nature > $Autumn and $Nature > $Summer and $Nature > $Playful and $Nature > $Strong and $Nature > $Cute and $Nature > $Wise and $Nature > $Airy and $Nature > $Classic and $Nature > $Silly and $Nature > $Mythical and $Nature > $Spooky and $Nature > $Adventure>>
+  <<set $Winner = "Nature">>
+  
+<<elseif $Winter > $Nature and $Winter > $Autumn and $Winter > $Summer and $Winter > $Playful and $Winter > $Strong and $Winter > $Cute and $Winter > $Wise and $Winter > $Airy and $Winter > $Classic and $Winter > $Silly and $Winter > $Mythical and $Winter > $Spooky and $Winter > $Adventure>>
+  <<set $Winner = "Winter">>
+  
+<<elseif $Autumn > $Nature and $Autumn > $Winter and $Autumn > $Summer and $Autumn > $Playful and $Autumn > $Strong and $Autumn > $Cute and $Autumn > $Wise and $Autumn > $Airy and $Autumn > $Classic and $Autumn > $Silly and $Autumn > $Mythical and $Autumn > $Spooky and $Autumn > $Adventure>>
+  <<set $Winner = "Autumn">>
+  
+<<elseif $Summer > $Nature and $Summer > $Winter and $Summer > $Autumn and $Summer > $Playful and $Summer > $Strong and $Summer > $Cute and $Summer > $Wise and $Summer > $Airy and $Summer > $Classic and $Summer > $Silly and $Summer > $Mythical and $Summer > $Spooky and $Summer > $Adventure>>
+  <<set $Winner = "Summer">>
+  
+<<elseif $Playful > $Nature and $Playful > $Winter and $Playful > $Autumn and $Playful > $Summer and $Playful > $Strong and $Playful > $Cute and $Playful > $Wise and $Playful > $Airy and $Playful > $Classic and $Playful > $Silly and $Playful > $Mythical and $Playful > $Spooky and $Playful > $Adventure>>
+  <<set $Winner = "Playful">>
+  
+<<elseif $Strong > $Nature and $Strong > $Winter and $Strong > $Autumn and $Strong > $Summer and $Strong > $Playful and $Strong > $Cute and $Strong > $Wise and $Strong > $Airy and $Strong > $Classic and $Strong > $Silly and $Strong > $Mythical and $Strong > $Spooky and $Strong > $Adventure>>
+  <<set $Winner = "Strong">>
+  
+<<elseif $Cute > $Nature and $Cute > $Winter and $Cute > $Autumn and $Cute > $Summer and $Cute > $Playful and $Cute > $Strong and $Cute > $Wise and $Cute > $Airy and $Cute > $Classic and $Cute > $Silly and $Cute > $Mythical and $Cute > $Spooky and $Cute > $Adventure>>
+  <<set $Winner = "Cute">>
+  
+<<elseif $Wise > $Nature and $Wise > $Winter and $Wise > $Autumn and $Wise > $Summer and $Wise > $Playful and $Wise > $Strong and $Wise > $Cute and $Wise > $Airy and $Wise > $Classic and $Wise > $Silly and $Wise > $Mythical and $Wise > $Spooky and $Wise > $Adventure>>
+  <<set $Winner = "Wise">>
+  
+<<elseif $Airy > $Nature and $Airy > $Winter and $Airy > $Autumn and $Airy > $Summer and $Airy > $Playful and $Airy > $Strong and $Airy > $Cute and $Airy > $Wise and $Airy > $Classic and $Airy > $Silly and $Airy > $Mythical and $Airy > $Spooky and $Airy > $Adventure>>
+  <<set $Winner = "Airy">>
+  
+<<elseif $Classic > $Nature and $Classic > $Winter and $Classic > $Autumn and $Classic > $Summer and $Classic > $Playful and $Classic > $Strong and $Classic > $Cute and $Classic > $Wise and $Classic > $Airy and $Classic > $Silly and $Classic > $Mythical and $Classic > $Spooky and $Classic > $Adventure>>
+  <<set $Winner = "Classic">>
+  
+<<elseif $Silly > $Nature and $Silly > $Winter and $Silly > $Autumn and $Silly > $Summer and $Silly > $Playful and $Silly > $Strong and $Silly > $Cute and $Silly > $Wise and $Silly > $Airy and $Silly > $Classic and $Silly > $Mythical and $Silly > $Spooky and $Silly > $Adventure>>
+  <<set $Winner = "Silly">>
+  
+<<elseif $Mythical > $Nature and $Mythical > $Winter and $Mythical > $Autumn and $Mythical > $Summer and $Mythical > $Playful and $Mythical > $Strong and $Mythical > $Cute and $Mythical > $Wise and $Mythical > $Airy and $Mythical > $Classic and $Mythical > $Silly and $Mythical > $Spooky and $Mythical > $Adventure>>
+  <<set $Winner = "Mythical">>
+  
+<<elseif $Spooky > $Nature and $Spooky > $Winter and $Spooky > $Autumn and $Spooky > $Summer and $Spooky > $Playful and $Spooky > $Strong and $Spooky > $Cute and $Spooky > $Wise and $Spooky > $Airy and $Spooky > $Classic and $Spooky > $Silly and $Spooky > $Mythical and $Spooky > $Adventure>>
+  <<set $Winner = "Spooky">>
+  
+<<elseif $Adventure > $Nature and $Adventure > $Winter and $Adventure > $Autumn and $Adventure > $Summer and $Adventure > $Playful and $Adventure > $Strong and $Adventure > $Cute and $Adventure > $Wise and $Adventure > $Airy and $Adventure > $Classic and $Adventure > $Silly and $Adventure > $Mythical and $Adventure > $Spooky>>
+  <<set $Winner = "Adventure">>
+  
+  <!-- Fallback only if none of the above matched -->
+<<if !$Winner>>
+  <<set $Winner = "Classic">>
+<</if>>
+  
+<</if>>
+
+
+
+
+
+
+<<if $Length == "Short">>
+
+
+
+
+
+	<<if $Winner == "Nature">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Nilufi/1/3.png"><br>Nilufi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norxen/1/3.png"><br>Norxen</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dorfli/1/3.png"><br>Dorfli</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borivo/1/3.png"><br>Borivo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Rivord/1/3.png"><br>Rivord</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Eckoa/1/3.png"><br>Eckoa</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Winter">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Snocon/1/3.png"><br>Snocon</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuleve/1/3.png"><br>Yuleve</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Arclad/1/3.png"><br>Arclad</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yubalu/1/3.png"><br>Yubalu</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+  	<</if>>
+	<<if $Winner == "Autumn">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Alforn/1/3.png"><br>Alforn</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Aurlux/1/3.png"><br>Aurlux</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Summer">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Tiriwa/1/3.png"><br>Tiriwa</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borwa/1/3.png"><br>Borwa</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+ 	<</if>>
+	<<if $Winner == "Playful">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Joylet/1/3.png"><br>Joylet</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Actrae/1/3.png"><br>Actrae</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Strong">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Jadaw/1/3.png"><br>Jadaw</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/MOO5E/1/3.png"><br>MOO5E</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Klorum/1/3.png"><br>Klorum</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Cute">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Iclett/1/3.png"><br>Iclett</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Wise">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Yurnta/1/3.png"><br>Yurnta</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Byott/1/3.png"><br>Byott</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jaydaw/1/3.png"><br>Jaydaw</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norlux/1/3.png"><br>Norlux</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Airy">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Lupeal/1/3.png"><br>Lupeal</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Classic">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Silly">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+     <td><center><img src="http://pets.neopets.com/cpn/Groofo/1/3.png"><br>Groofo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yumbl/1/3.png"><br>Yumbl</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mochoc/1/3.png"><br>Mochoc</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Mythical">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Spooky">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Adventure">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+    
+    
+    
+    
+    
+<<elseif $Length == "Medium">>
+
+
+
+
+
+	<<if $Winner == "Nature">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Florinex/1/3.png"><br>Florinex</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Folkire/1/3.png"><br>Folkire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yulefire/1/3.png"><br>Yulefire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Kyndari/1/3.png"><br>Kyndari</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zeravira/1/3.png"><br>Zeravira</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tuvina /1/3.png">
+<br>Tuvina </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Baythia/1/3.png"><br>Baythia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borovita/1/3.png"><br>Borovita</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Frolicot/1/3.png"><br>Frolicot</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borovoux/1/3.png"><br>Borovoux</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+     	<</if>>
+     
+     
+     
+     
+	<<if $Winner == "Winter">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Arcticub/1/3.png"><br>Arcticub</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Blizzeo/1/3.png"><br>Blizzeo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Blizzlet/1/3.png"><br>Blizzlet</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Elvinter/1/3.png"><br>Elvinter</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Eskimojo/1/3.png"><br>Eskimojo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Frostiv/1/3.png"><br>Frostiv</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Glacicle/1/3.png"><br>Glacicle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Icelorn/1/3.png"><br>Icelorn</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Icewick/1/3.png"><br>Icewick</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norrthi/1/3.png"><br>Norrthi</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Norrthie/1/3.png"><br>Norrthie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snofari/1/3.png"><br>Snofari</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snofest/1/3.png"><br>Snofest</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snorblis/1/3.png"><br>Snorblis</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Wintiba/1/3.png"><br>Wintiba</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yetisno/1/3.png"><br>Yetisno</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yurltide/1/3.png"><br>Yurltide</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/McArctic/1/3.png"><br>McArctic</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Polarora/1/3.png"><br>Polarora</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yulebon/1/3.png"><br>Yulebon</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Rondoof/1/3.png"><br>Rondoof</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowlad/1/3.png"><br>Snowlad</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Merrimew/1/3.png"><br>Merrimew</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chompmas/1/3.png"><br>Chompmas</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugmas/1/3.png"><br>Snugmas</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuletot/1/3.png"><br>Yuletot</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowrium/1/3.png"><br>Snowrium</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norlumi/1/3.png"><br>Norlumi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snovell/1/3.png"><br>Snovell</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Autumn">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Acornix/1/3.png"><br>Acornix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Bramblix/1/3.png"><br>Bramblix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Kayutumn/1/3.png"><br>Kayutumn</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Maplesti/1/3.png"><br>Maplesti</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Summer">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Islaneo/1/3.png"><br>Islaneo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Islawind/1/3.png"><br>Islawind</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tasmani/1/3.png"><br>Tasmani</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tropiso/1/3.png"><br>Tropiso</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tropizle/1/3.png"><br>Tropizle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Playtusk/1/3.png"><br>Playtusk</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tuskidoo/1/3.png"><br>Tuskidoo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Walrusi/1/3.png"><br>Walrusi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talanza/1/3.png"><br>Talanza</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tavirana/1/3.png"><br>Tavirana</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Taluira/1/3.png"><br>Taluira</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talimara/1/3.png"><br>Talimara</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Toskaia/1/3.png"><br>Toskaia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Taraniki/1/3.png"><br>Taraniki</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tavikoa /1/3.png">
+<br>Tavikoa </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Fruitzia/1/3.png"><br>Fruitzia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Seawuff/1/3.png"><br>Seawuff</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norvista/1/3.png"><br>Norvista</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Playful">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Skatery/1/3.png"><br>Skatery</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jollivor/1/3.png"><br>Jollivor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jollynox/1/3.png"><br>Jollynox</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Joyfulo/1/3.png"><br>Joyfulo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dorfkin/1/3.png"><br>Dorfkin</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuletta/1/3.png"><br>Yuletta</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nefflur/1/3.png"><br>Nefflur</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Koolari/1/3.png"><br>Koolari</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Arndorf/1/3.png"><br>Arndorf</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuzzah/1/3.png"><br>Snuzzah</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Shoulet/1/3.png"><br>Shoulet</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Stagebud/1/3.png"><br>Stagebud</center></td>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Strong">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Yuleboon/1/3.png"><br>Yuleboon</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/5QUlRREL/1/3.png"><br>5QUlRREL</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/5QUlRREL/1/3.png"><br>5QUlRREL</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/CA5TlEL/1/3.png"><br>CA5TlEL</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Caztielo/1/3.png"><br>Caztielo</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Cute">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Snugalow/1/3.png"><br>Snugalow</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuggem/1/3.png"><br>Snuggem</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglop/1/3.png"><br>Snugglop</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglub/1/3.png"><br>Snugglub</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglus/1/3.png"><br>Snugglus</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuglows/1/3.png"><br>Snuglows</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Ilumura/1/3.png"><br>Ilumura</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cowoson/1/3.png"><br>Cowoson</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Smilodog/1/3.png"><br>Smilodog</center></td>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Wise">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Nortasia/1/3.png"><br>Nortasia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norvalix/1/3.png"><br>Norvalix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Lufrice/1/3.png"><br>Lufrice</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zalorina/1/3.png"><br>Zalorina</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zerathia/1/3.png"><br>Zerathia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Aurinor/1/3.png"><br>Aurinor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mystnor/1/3.png"><br>Mystnor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Antarora/1/3.png"><br>Antarora</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Actoria/1/3.png"><br>Actoria</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Thesspia/1/3.png"><br>Thesspia</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Thesspio/1/3.png"><br>Thesspio</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Actorix/1/3.png"><br>Actorix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/DramaJoy/1/3.png"><br>DramaJoy</center></td>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Airy">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Noralite/1/3.png"><br>Noralite</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norralis/1/3.png"><br>Norralis</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Birdfia/1/3.png"><br>Birdfia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Owlnigma/1/3.png"><br>Owlnigma</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Classic">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Yuringle/1/3.png"><br>Yuringle</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Silly">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Chocish/1/3.png"><br>Chocish</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cocoazee/1/3.png"><br>Cocoazee</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cherrimo/1/3.png"><br>Cherrimo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocahog/1/3.png"><br>Chocahog</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dairyhog/1/3.png"><br>Dairyhog</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Meltimoe/1/3.png"><br>Meltimoe</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mocheri/1/3.png"><br>Mocheri</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mochimog/1/3.png"><br>Mochimog</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/MoeMunch/1/3.png"><br>MoeMunch</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Magibear/1/3.png"><br>Magibear</center></td>
+     </tr><tr>
+     
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Mythical">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Nordaria/1/3.png"><br>Nordaria</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nortiva/1/3.png"><br>Nortiva</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dazzola/1/3.png"><br>Dazzola</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occameer/1/3.png"><br>Occameer</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamili/1/3.png"><br>Occamili</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamly/1/3.png"><br>Occamly</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamyre/1/3.png"><br>Occamyre</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Spooky">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Zovahni /1/3.png"><br>Zovahni </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Morisiya/1/3.png"><br>Morisiya</center></td>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Adventure">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Ganttis/1/3.png"><br>Ganttis</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+<</if>>
+
+
+
+
+
+<<elseif $Length is "Long">>
+
+
+
+
+
+	<<if $Winner == "Nature">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Springvin/1/3.png"><br>Springvin</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zaraluwa /1/3.png"><br>Zaraluwa </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Montainous/1/3.png"><br>Montainous</center></td>
+ <td><center><img src="http://pets.neopets.com/cpn/Talunari /1/3.png"><br>Talunari </center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Winter">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Arcticome/1/3.png"><br>Arcticome</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Fjordoras/1/3.png"><br>Fjordoras</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snobeastie/1/3.png"><br>Snobeastie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snobeasty/1/3.png"><br>Snobeasty</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Rudolfous/1/3.png"><br>Rudolfous</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowosaur/1/3.png"><br>Snowosaur</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Brrrrring/1/3.png"><br>Brrrrring</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Brrrrrring/1/3.png"><br>Brrrrrring</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocember/1/3.png"><br>Chocember</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yetiverse/1/3.png"><br>Yetiverse</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Hollidazle/1/3.png"><br>Hollidazle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Hollytide/1/3.png"><br>Hollytide</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Boroville/1/3.png"><br>Boroville</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Bonechillr/1/3.png"><br>Bonechillr</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Polartanic/1/3.png"><br>Polartanic</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Winterkins/1/3.png"><br>Winterkins</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowcrushy/1/3.png"><br>Snowcrushy</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Autumn">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Summer">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Mandalaqua/1/3.png"><br>Mandalaqua</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tropiskia/1/3.png"><br>Tropiskia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tuskablast/1/3.png"><br>Tuskablast</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tirahana /1/3.png"><br>Tirahana </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tikaluma /1/3.png"><br>Tikaluma </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tiraviwa /1/3.png"><br>Tiraviwa </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tamariko /1/3.png"><br>Tamariko </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zarimara /1/3.png"><br>Zarimara </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talanuma /1/3.png"><br>Talanuma </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tivolani /1/3.png">
+<br>Tivolani </center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Takaruna /1/3.png"><br>Takaruna </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tylunari /1/3.png">
+<br>Tylunari </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zanohara /1/3.png"><br>Zanohara </center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Playful">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Otterique/1/3.png"><br>Otterique</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jollywinks/1/3.png"><br>Jollywinks</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cuddledash/1/3.png"><br>Cuddledash</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nibblitte/1/3.png"><br>Nibblitte</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cuddlemutt/1/3.png"><br>Cuddlemutt</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Merrifire/1/3.png"><br>Merrifire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dramaticka/1/3.png"><br>Dramaticka</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Stagepunk/1/3.png"><br>Stagepunk</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/GlamSpire/1/3.png"><br>GlamSpire</center></td>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Strong">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Chomblitz/1/3.png"><br>Chomblitz</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Casstiello/1/3.png"><br>Casstiello</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/FEATHER555/1/3.png"><br>FEATHER555</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Winchesto/1/3.png"><br>Winchesto</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/5QUIRREI_/1/3.png"><br>5QUIRREI_</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Cute">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Comfykins/1/3.png"><br>Comfykins</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cuddiloom/1/3.png"><br>Cuddiloom</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugabble/1/3.png"><br>Snugabble</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuggapuff/1/3.png"><br>Snuggapuff</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglkins/1/3.png"><br>Snugglkins</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dramakeek/1/3.png"><br>Dramakeek</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Kachactor/1/3.png"><br>Kachactor</center></td>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Wise">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Diaphonix/1/3.png"><br>Diaphonix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zoravita /1/3.png"><br>Zoravita </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Thesspius/1/3.png"><br>Thesspius</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Theatrixs/1/3.png"><br>Theatrixs</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Performie/1/3.png"><br>Performie</center></td>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Airy">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Icetricity/1/3.png"><br>Icetricity</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nordicora/1/3.png"><br>Nordicora</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Classic">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Silly">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>  
+<td><center><img src="http://pets.neopets.com/cpn/Icetastic/1/3.png"><br>Icetastic</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocowoosh/1/3.png"><br>Chocowoosh</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocoholi/1/3.png"><br>Chocoholi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cherritop/1/3.png"><br>Cherritop</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocomoho/1/3.png"><br>Chocomoho</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/DairyCreme/1/3.png"><br>DairyCreme</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Mythical">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Occamillie/1/3.png"><br>Occamillie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamilly/1/3.png"><br>Occamilly</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Spooky">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Grimpeaks/1/3.png"><br>Grimpeaks</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Hybernite/1/3.png"><br>Hybernite</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Adventure">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Hibernaut/1/3.png"><br>Hibernaut</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Adventorf/1/3.png"><br>Adventorf</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Otteridoo/1/3.png"><br>Otteridoo</center></td>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+  
+  
+  
+  
+  
+  
+  
+  
+<!--Under the next else tag, list full name category lists, not categorised by length -->
+  
+  
+  
+  
+  
+  
+  
+  
+<<else>>
+	<<if $Winner == "Nature">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Florinex/1/3.png"><br>Florinex</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Springvin/1/3.png"><br>Springvin</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Folkire/1/3.png"><br>Folkire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yulefire/1/3.png"><br>Yulefire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nilufi/1/3.png"><br>Nilufi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Kyndari/1/3.png"><br>Kyndari</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zeravira/1/3.png"><br>Zeravira</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zaraluwa /1/3.png"><br>Zaraluwa </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Montainous/1/3.png"><br>Montainous</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Norxen/1/3.png"><br>Norxen</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dorfli/1/3.png"><br>Dorfli</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talunari /1/3.png">
+<br>Talunari </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tuvina /1/3.png">
+<br>Tuvina </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Baythia/1/3.png"><br>Baythia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borovita/1/3.png"><br>Borovita</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borivo/1/3.png"><br>Borivo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Frolicot/1/3.png"><br>Frolicot</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borovoux/1/3.png"><br>Borovoux</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Rivord/1/3.png"><br>Rivord</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Eckoa/1/3.png"><br>Eckoa</center></td>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Winter">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Arcticome/1/3.png"><br>Arcticome</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Arcticub/1/3.png"><br>Arcticub</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Blizzeo/1/3.png"><br>Blizzeo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Blizzlet/1/3.png"><br>Blizzlet</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Elvinter/1/3.png"><br>Elvinter</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Eskimojo/1/3.png"><br>Eskimojo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Fjordoras/1/3.png"><br>Fjordoras</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Frostiv/1/3.png"><br>Frostiv</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Glacicle/1/3.png"><br>Glacicle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Icelorn/1/3.png"><br>Icelorn</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Icepocalypse/1/3.png"><br>Icepocalypse</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Icewick/1/3.png"><br>Icewick</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norrthi/1/3.png"><br>Norrthi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norrthie/1/3.png"><br>Norrthie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snobeastie/1/3.png"><br>Snobeastie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snobeasty/1/3.png"><br>Snobeasty</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snocon/1/3.png"><br>Snocon</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snofari/1/3.png"><br>Snofari</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snofest/1/3.png"><br>Snofest</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snorblis/1/3.png"><br>Snorblis</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Wintiba/1/3.png"><br>Wintiba</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yetisno/1/3.png"><br>Yetisno</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jingleheart/1/3.png"><br>Jingleheart</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Rudolfous/1/3.png"><br>Rudolfous</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuleve/1/3.png"><br>Yuleve</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yurltide/1/3.png"><br>Yurltide</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowosaur/1/3.png"><br>Snowosaur</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Brrrrring/1/3.png"><br>Brrrrring</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Brrrrrring/1/3.png"><br>Brrrrrring</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Brrrrrrrring/1/3.png"><br>Brrrrrrrring</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Brrrrrrrrring/1/3.png"><br>Brrrrrrrrring</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/McArctic/1/3.png"><br>McArctic</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocember/1/3.png"><br>Chocember</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snownonymous/1/3.png"><br>Snownonymous</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Polarora/1/3.png"><br>Polarora</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yulebon/1/3.png"><br>Yulebon</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Rondoof/1/3.png"><br>Rondoof</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yetiverse/1/3.png"><br>Yetiverse</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowlad/1/3.png"><br>Snowlad</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Arclad/1/3.png"><br>Arclad</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Merrimew/1/3.png"><br>Merrimew</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Hollidazle/1/3.png"><br>Hollidazle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Hollytide/1/3.png"><br>Hollytide</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yubalu/1/3.png"><br>Yubalu</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Boroville/1/3.png"><br>Boroville</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowcrunchy/1/3.png"><br>Snowcrunchy</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Arcticbeast/1/3.png"><br>Arcticbeast</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Blizzosaurus/1/3.png"><br>Blizzosaurus</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Bonechillr/1/3.png"><br>Bonechillr</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Polartanic/1/3.png"><br>Polartanic</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Chompmas/1/3.png"><br>Chompmas</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Winterkins/1/3.png"><br>Winterkins</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugmas/1/3.png"><br>Snugmas</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuletot/1/3.png"><br>Yuletot</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowrium/1/3.png"><br>Snowrium</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snowcrushy/1/3.png"><br>Snowcrushy</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norlumi/1/3.png"><br>Norlumi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snovell/1/3.png"><br>Snovell</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Autumn">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Acornix/1/3.png"><br>Acornix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Alforn/1/3.png"><br>Alforn</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Aurlux/1/3.png"><br>Aurlux</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Bramblix/1/3.png"><br>Bramblix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Kayutumn/1/3.png"><br>Kayutumn</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Maplesti/1/3.png"><br>Maplesti</center></td>
+</tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Summer">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Islaneo/1/3.png"><br>Islaneo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Islawind/1/3.png"><br>Islawind</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mandalaqua/1/3.png"><br>Mandalaqua</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tasmani/1/3.png"><br>Tasmani</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tropiskia/1/3.png"><br>Tropiskia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tropiso/1/3.png"><br>Tropiso</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tropizle/1/3.png"><br>Tropizle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Playtusk/1/3.png"><br>Playtusk</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tuskablast/1/3.png"><br>Tuskablast</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tuskidoo/1/3.png"><br>Tuskidoo</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Walrusi/1/3.png"><br>Walrusi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tiriwa/1/3.png"><br>Tiriwa</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talanza/1/3.png"><br>Talanza</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tavirana/1/3.png"><br>Tavirana</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Taluira/1/3.png"><br>Taluira</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talimara/1/3.png"><br>Talimara</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Toskaia/1/3.png"><br>Toskaia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Taraniki/1/3.png"><br>Taraniki</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tirahana /1/3.png"><br>Tirahana </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tikaluma /1/3.png"><br>Tikaluma </center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Tiraviwa /1/3.png"><br>Tiraviwa </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tamariko /1/3.png"><br>Tamariko </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zarimara /1/3.png"><br>Zarimara </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Talanuma /1/3.png"><br>Talanuma </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tivolani /1/3.png">
+<br>Tivolani </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Takaruna /1/3.png"><br>Takaruna </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tavikoa /1/3.png">
+<br>Tavikoa </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Tylunari /1/3.png">
+<br>Tylunari </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zanohara /1/3.png"><br>Zanohara </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Fruitzia/1/3.png"><br>Fruitzia</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Seawuff/1/3.png"><br>Seawuff</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norvista/1/3.png"><br>Norvista</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Borwa/1/3.png"><br>Borwa</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Playful">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Skatery/1/3.png"><br>Skatery</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jollivor/1/3.png"><br>Jollivor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jollynox/1/3.png"><br>Jollynox</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Joyfulo/1/3.png"><br>Joyfulo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dorfkin/1/3.png"><br>Dorfkin</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuletta/1/3.png"><br>Yuletta</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nefflur/1/3.png"><br>Nefflur</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Koolari/1/3.png"><br>Koolari</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Arndorf/1/3.png"><br>Arndorf</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Otterique/1/3.png"><br>Otterique</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Jollywinks/1/3.png"><br>Jollywinks</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Joylet/1/3.png"><br>Joylet</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cuddledash/1/3.png"><br>Cuddledash</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nibblitte/1/3.png"><br>Nibblitte</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuzzah/1/3.png"><br>Snuzzah</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cuddlemutt/1/3.png"><br>Cuddlemutt</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Shoulet/1/3.png"><br>Shoulet</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Merrifire/1/3.png"><br>Merrifire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dramaticka/1/3.png"><br>Dramaticka</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Stagepunk/1/3.png"><br>Stagepunk</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/GlamSpire/1/3.png"><br>GlamSpire</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Actrae/1/3.png"><br>Actrae</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Stagebud/1/3.png"><br>Stagebud</center></td>
+
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Strong">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Frontierbeast/1/3.png"><br>Frontierbeast</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yuleboon/1/3.png"><br>Yuleboon</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chomblitz/1/3.png"><br>Chomblitz</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jadaw/1/3.png"><br>Jadaw</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jollyosaurus/1/3.png"><br>Jollyosaurus</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/5QUlRREL/1/3.png"><br>5QUlRREL</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/5QUlRREL/1/3.png"><br>5QUlRREL</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/CA5TlEL/1/3.png"><br>CA5TlEL</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Casstiello/1/3.png"><br>Casstiello</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/FEATHER555/1/3.png"><br>FEATHER555</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/MOO5E/1/3.png"><br>MOO5E</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Supernaturalo/1/3.png"><br>Supernaturalo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Winchesto/1/3.png"><br>Winchesto</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Caztielo/1/3.png"><br>Caztielo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Klorum/1/3.png"><br>Klorum</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/5QUIRREI_/1/3.png"><br>5QUIRREI_</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Cute">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Iclett/1/3.png"><br>Iclett</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Comfykins/1/3.png"><br>Comfykins</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cuddiloom/1/3.png"><br>Cuddiloom</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugabble/1/3.png"><br>Snugabble</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugalow/1/3.png"><br>Snugalow</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuggapuff/1/3.png"><br>Snuggapuff</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuggem/1/3.png"><br>Snuggem</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglkins/1/3.png"><br>Snugglkins</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglop/1/3.png"><br>Snugglop</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglub/1/3.png"><br>Snugglub</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Snugglus/1/3.png"><br>Snugglus</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Snuglows/1/3.png"><br>Snuglows</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Ilumura/1/3.png"><br>Ilumura</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dramakeek/1/3.png"><br>Dramakeek</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Kachactor/1/3.png"><br>Kachactor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cowoson/1/3.png"><br>Cowoson</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Smilodog/1/3.png"><br>Smilodog</center></td>
+
+
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Wise">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Nortasia/1/3.png"><br>Nortasia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norvalix/1/3.png"><br>Norvalix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Diaphonix/1/3.png"><br>Diaphonix</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Lufrice/1/3.png"><br>Lufrice</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yurnta/1/3.png"><br>Yurnta</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Byott/1/3.png"><br>Byott</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Jaydaw/1/3.png"><br>Jaydaw</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zalorina/1/3.png"><br>Zalorina</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zerathia/1/3.png"><br>Zerathia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zoravita /1/3.png"><br>Zoravita </center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Norlux/1/3.png"><br>Norlux</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Aurinor/1/3.png"><br>Aurinor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mystnor/1/3.png"><br>Mystnor</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Antarora/1/3.png"><br>Antarora</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Theatricana/1/3.png"><br>Theatricana</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Actoria/1/3.png"><br>Actoria</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Thesspia/1/3.png"><br>Thesspia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Thesspio/1/3.png"><br>Thesspio</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Thesspius/1/3.png"><br>Thesspius</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Actorix/1/3.png"><br>Actorix</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Theatrixs/1/3.png"><br>Theatrixs</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Performie/1/3.png"><br>Performie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/DramaJoy/1/3.png"><br>DramaJoy</center></td>
+
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Airy">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Icetricity/1/3.png"><br>Icetricity</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Noralite/1/3.png"><br>Noralite</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nordicora/1/3.png"><br>Nordicora</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Norralis/1/3.png"><br>Norralis</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Lupeal/1/3.png"><br>Lupeal</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Turtlable/1/3.png"><br>Turtlable</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Birdfia/1/3.png"><br>Birdfia</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Owlnigma/1/3.png"><br>Owlnigma</center></td>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Classic">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Yuringle/1/3.png"><br>Yuringle</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Merrimallow/1/3.png"><br>Merrimallow</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Magibear/1/3.png"><br>Magibear</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Silly">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Icetastic/1/3.png"><br>Icetastic</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Groofo/1/3.png"><br>Groofo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocish/1/3.png"><br>Chocish</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocowhoosh/1/3.png"><br>Chocowhoosh</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocowoosh/1/3.png"><br>Chocowoosh</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cocoazee/1/3.png"><br>Cocoazee</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Fikaroo/1/3.png"><br>Fikaroo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Whirlicious/1/3.png"><br>Whirlicious</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Yumbl/1/3.png"><br>Yumbl</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cherryzilla/1/3.png"><br>Cherryzilla</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Chocoholi/1/3.png"><br>Chocoholi</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cherrimo/1/3.png"><br>Cherrimo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cherritop/1/3.png"><br>Cherritop</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Cherritopped/1/3.png"><br>Cherritopped</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocahog/1/3.png"><br>Chocahog</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Chocomoho/1/3.png"><br>Chocomoho</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/DairyCreme/1/3.png"><br>DairyCreme</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dairyhog/1/3.png"><br>Dairyhog</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Meltimoe/1/3.png"><br>Meltimoe</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mocheri/1/3.png"><br>Mocheri</center></td>
+     </tr><tr>
+<td><center><img src="http://pets.neopets.com/cpn/Mochimog/1/3.png"><br>Mochimog</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Mochoc/1/3.png"><br>Mochoc</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/MoeMunch/1/3.png"><br>MoeMunch</center></td>
+</tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Mythical">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Nordaria/1/3.png"><br>Nordaria</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Nortiva/1/3.png"><br>Nortiva</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Dazzola/1/3.png"><br>Dazzola</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occameer/1/3.png"><br>Occameer</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamili/1/3.png"><br>Occamili</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamillie/1/3.png"><br>Occamillie</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamilly/1/3.png"><br>Occamilly</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamly/1/3.png"><br>Occamly</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Occamyre/1/3.png"><br>Occamyre</center></td>
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Spooky">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Grimpeaks/1/3.png"><br>Grimpeaks</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Hybernite/1/3.png"><br>Hybernite</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Zovahni /1/3.png"><br>Zovahni </center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Morisiya/1/3.png"><br>Morisiya</center></td>
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+	<<if $Winner == "Adventure">>
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+<td><center><img src="http://pets.neopets.com/cpn/Hibernaut/1/3.png"><br>Hibernaut</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Adventorf/1/3.png"><br>Adventorf</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Otteridoo/1/3.png"><br>Otteridoo</center></td>
+<td><center><img src="http://pets.neopets.com/cpn/Ganttis/1/3.png"><br>Ganttis</center></td>
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+	<</if>>
+<</if>>
+
+
+
+
+
+
+
+
+
+
+<!--Table Template below
+
+     <div class="pet"><center><table cellspacing="20">
+     <tr>
+
+
+
+     </tr>
+     <tr><td><center></center></td>
+     </tr></table></center></div>
+     
+-->
+
+<!--End Results -->
+
+
+
+➤ [[Yes!  That name is perfect!  Thank you, Clive!  Do you mind removing it?|Success]]
+
+➤ [[I'm sure the right name is here somewhere, but these aren't them.  Would you mind going through the questions again?|Q1Main]]
+
+➤ [[No ... I feel you didn't ask the right questions and therefore failed to understand what I seek.|Failure]]
+
+
+  </div>
+</div>
